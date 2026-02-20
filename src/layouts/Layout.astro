@@ -1,20 +1,54 @@
 ---
 import '../styles/global.css';
+
 interface Props {
   title: string;
   description?: string;
 }
-const { title, description = "Septito Aldo - Backend Developer & Security Enthusiast" } = Astro.props;
+
+const {
+  title,
+  description = "Septito Aldo Elvianto - Backend Developer, Network Enthusiast & Web Security dari Madiun. Lulusan D3 Teknologi Informasi Politeknik Negeri Madiun."
+} = Astro.props;
+
+const siteUrl = "https://septito.my.id";
+const ogImage = `${siteUrl}/og-image.png`;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={description} />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- Primary SEO -->
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="Septito Aldo Elvianto, Backend Developer Madiun, Web Developer Indonesia, Mikrotik, Web Security, Politeknik Negeri Madiun, sep-ae" />
+    <meta name="author" content="Septito Aldo Elvianto" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={siteUrl} />
+
+    <!-- Open Graph (preview di WhatsApp, Facebook, Discord) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:site_name" content="Septito Aldo Elvianto" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- Sitemap -->
+    <link rel="sitemap" href="/sitemap-index.xml" />
   </head>
   <body>
     <slot />

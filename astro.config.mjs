@@ -1,11 +1,12 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
+import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
+  site: "https://septito.my.id",
+  integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
   },
-  // Pastikan ini ada (default sudah aktif di Astro 4+)
-  experimental: {},
 });
