@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  porto:
+    build: .
+    container_name: porto-septito
+    restart: unless-stopped
+    ports:
+      - "80:80"
