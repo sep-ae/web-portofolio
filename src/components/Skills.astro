@@ -1,0 +1,46 @@
+---
+const skillGroups = [
+  {
+    category: "Web Development",
+    icon: "💻",
+    skills: ["Python", "Flask", "Node.js", "Vue.js", "Tailwind CSS", "MySQL", "REST API", "Web Security", "Midtrans API"]
+  },
+  {
+    category: "Networking",
+    icon: "🌐",
+    skills: ["Mikrotik RouterOS", "Winbox", "Firewall Rules", "VLAN", "DNS", "VPN"]
+  },
+  {
+    category: "DevOps & Tools",
+    icon: "🛠️",
+    skills: ["Git", "Docker", "Linux", "Nginx", "VS Code", "Cloudflare"]
+  }
+];
+---
+
+<section id="skills" class="py-24 bg-slate-900/50">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <p class="text-cyan-400 text-sm font-semibold tracking-widest uppercase mb-3">Expertise</p>
+      <h2 class="text-4xl md:text-5xl font-black text-white">Skills & Tools</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {skillGroups.map(group => (
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 card-hover">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-2xl">{group.icon}</span>
+            <h3 class="font-bold text-white">{group.category}</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            {group.skills.map(skill => (
+              <span class="text-sm bg-slate-800 text-slate-300 px-3 py-1 rounded-full border border-slate-700 hover:border-cyan-500/50 hover:text-cyan-400 transition-colors">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

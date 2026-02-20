@@ -1,0 +1,52 @@
+---
+---
+
+<section id="about" class="py-24 max-w-6xl mx-auto px-6">
+  <div class="grid md:grid-cols-2 gap-16 items-center">
+    <!-- Text -->
+    <div>
+      <p class="text-cyan-400 text-sm font-semibold tracking-widest uppercase mb-3">About Me</p>
+      <h2 class="text-4xl md:text-5xl font-black text-white mb-6">Halo, Saya Septito 👋</h2>
+      <div class="space-y-4 text-slate-400 leading-relaxed">
+        <p>
+          Lulusan D3 Teknologi Informasi dari
+          <span class="text-cyan-400 font-semibold">Politeknik Negeri Madiun</span>,
+          Jawa Timur. Fokus di backend development, web security, dan jaringan komputer.
+        </p>
+        <p>
+          Saya tertarik membangun sistem yang aman dan efisien —
+          mulai dari merancang REST API, konfigurasi jaringan dengan
+          <span class="text-cyan-400 font-semibold">Mikrotik RouterOS</span>,
+          hingga menganalisis kerentanan pada aplikasi web.
+        </p>
+        <p>
+          Di luar coding, hobi saya membangun home server low-power
+          menggunakan board Amlogic S905X dengan Armbian Linux 🖥️,
+          serta menganalisis pasar saham 📈
+        </p>
+      </div>
+      <a href="#contact"
+         class="inline-block mt-8 bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-cyan-500 text-white font-semibold px-6 py-3 rounded-full transition-all duration-200">
+        Get in Touch →
+      </a>
+    </div>
+
+    <!-- Info cards -->
+    <div class="grid grid-cols-2 gap-4">
+      {[
+        { label: "Location", value: "Madiun, ID", icon: "📍" },
+        { label: "Education", value: "D3 Teknologi Informasi", icon: "🎓" },
+        { label: "College", value: "Politeknik Negeri Madiun", icon: "🏛️" },
+        { label: "Focus", value: "Backend · Security · Network", icon: "🔒" },
+        { label: "Network", value: "Mikrotik RouterOS", icon: "🌐" },
+        { label: "Server", value: "S905X Armbian", icon: "🖥️" },
+      ].map(item => (
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 card-hover">
+          <span class="text-2xl mb-3 block">{item.icon}</span>
+          <p class="text-xs text-slate-500 mb-1">{item.label}</p>
+          <p class="text-sm font-semibold text-white">{item.value}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
